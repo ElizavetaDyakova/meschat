@@ -1,0 +1,45 @@
+header {
+    height: 78px;
+    background: #48429c;
+}
+.container {
+    box-sizing: border-box;
+    padding-left: 110px;
+    padding-right: 110px;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header-nav {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+.header-nav {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+.link-menu {
+    margin: 10px;
+    margin-top: 25px;
+}
+.name {
+    font-family: 'Chilanka', cursive;
+    font-size: 35px;
+    margin-top: 10px;
+    color: #E2E2E2;
+}
+.header-nav a:visited {
+    color: #E2E2E2;
+}
+.linked {
+    color: #E2E2E2;
+}
+.log {
+    background-color: transparent;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    font-size: 19px;
+}

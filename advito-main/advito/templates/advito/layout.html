@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        <title>Advito</title>
+    {% endblock title %}
+    <link rel="stylesheet" type="text/css" href="{% static 'advito/css/style.css' %}">
+</head>
+<body>
+
+<header>
+<nav class="container header-nav">
+        <ul class="header-nav">
+            <li class="link-menu name">
+                <a href="{% url 'index' %}">Meschat</a>
+            </li>
+            <li class="linked link-menu link-me">
+                <a href="{% url 'people' %}">Пользователи</a>
+            </li>
+{#            {% if user.is_authenticated %}#}
+{#            <li class="linked link-menu link-me">#}
+{#                <a href="{% url 'dialogs' %}">Диалоги</a>#}
+{#            </li>#}
+{#            {% endif %}#}
+        <li class="link-menu">
+                <a class="linked" href="{% url 'category' %}">Категории</a>
+            </li>
+        {% if user.is_authenticated %}
+            <li class="link-menu">
+                <a class="linked" href="{% url 'post_create' %}">Создать пост</a>
+            </li>
+            {% endif %}
+        </ul>
+
+                {% if user.is_authenticated %}
+                <a class="linked link-menu link-me" href="{% url 'profile' user.id %}">{{ user.username }}</a>
+                    <form class="link-menu link-me" action="{% url 'logout' %}" method="GET">
+                        {% csrf_token %}
+                        <button class="log" type="submit"> Logout </button>
+                    </form>
+                {% else %}
+                    <a class="linked link-menu link-me" href="{% url 'login' %}"> Login </a>
+                {% endif %}
+    </nav>
+
+</header>
+<main>
+    <section class="container">
+    <div class="time">
+        <div class="center">
+            До следующего года:
+            <p1 id="timer"></p1>
+        </div>
+    </div>
+
+        {% block unique_content %}
+        {% endblock unique_content %}
+    </section>
+</main>
+<!-- подвал -->
+      <footer class="footer">
+         <div class="container foo">
+            <div class="footer-block-wraper">
+               <section class="footer-block">
+                  <h4 class="h-nav-footer">Navigation</h4>
+                  <hr class="line-footer">
+                   <ul class="nav-footer-wrap">
+            <li class="nav-footer">
+                <a href="{% url 'index' %}">Advito</a>
+            </li>
+            <li class="nav-footer">
+                <a href="{% url 'category' %}">Категории</a>
+            </li>
+            <li class="nav-footer">
+                {% if user.is_authenticated %}
+                <a href="{% url 'profile' user.id %}">Профиль</a>
+                {% endif %}
+            </li>
+                       {% if user.is_authenticated %}
+                   <li class="nav-footer">
+                       <a href="{% url 'post_create' %}"> Создать пост </a>
+                   </li>
+                {% endif %}
+        </ul>
+               </section>
+               <section class="footer-block">
+                  <h4 class="h-nav-footer">Customer Information</h4>
+                  <hr class="line-footer">
+                  <ul class="nav-footer-wrap">
+                     <li class="nav-footer"><a href="#">Contact Us</a></li>
+                     <li class="nav-footer"><a href="#">Sale Exclusions</a></li>
+                     <li class="nav-footer"><a href="#">Shipping & Returns</a></li>
+                     <li class="nav-footer"><a href="#">Terms & Conditions</a></li>
+                     <li class="nav-footer"><a href="#">Privacy Policy</a></li>
+                     <li class="nav-footer"><a href="#">Search</a></li>
+                  </ul>
+               </section>
+               <section class="footer-block">
+                  <h4 class="h-nav-footer">Connect</h4>
+                  <hr class="line-footer">
+                  <input name="a" placeholder="Email" class="pole">
+                  <input type="submit" class="btnms" value="JOIN">
+               </section>
+            </div>
+            <hr class="line-footer line-footer-bottom">
+            <ul class="rat-wrap">
+               <li class="rat bottom-link star" style="margin-left: 0;">
+                  Company Rating
+               <div class="rating-area">
+                  <input type="radio" id="star-5" name="rating" value="5">
+                  <label for="star-5" title="Оценка «5»"></label>
+                  <input type="radio" id="star-4" name="rating" value="4">
+                  <label for="star-4" title="Оценка «4»"></label>
+                  <input type="radio" id="star-3" name="rating" value="3">
+                  <label for="star-3" title="Оценка «3»"></label>
+                  <input type="radio" id="star-2" name="rating" value="2">
+                  <label for="star-2" title="Оценка «2»"></label>
+                  <input type="radio" id="star-1" name="rating" value="1">
+                  <label for="star-1" title="Оценка «1»"></label>
+               </div>
+               </li>
+               <li class="rat">
+                  Copyright © 2020 • Advito
+               </li>
+               <li class="rat bottom-link web-rat">
+                  Web Design — Kto-to
+               </li>
+            </ul>
+         </div>
+      </footer>
+
+</body>
+<script src="{% static 'advito/script/timer.js' %}"></script>
+</html>

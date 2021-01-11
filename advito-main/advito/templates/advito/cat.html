@@ -1,0 +1,19 @@
+{% extends 'advito/layout.html' %}
+{% block title %}
+    <title>Категории</title>
+{% endblock title %}
+{% block unique_content %}
+    <p>Категории объявлений</p>
+    <ul class="cat-set">
+     {% for cat in categ %}
+        <li class="cat">
+            <a href="{% url 'categ' cat.id %}">{{ cat.name }}</a>
+        </li>
+     {% endfor %}
+    </ul>
+    {% if user.is_authenticated %}
+        {% if user.id == 2 %}
+            <a href="{% url 'categ_create' %}">Создать категорию</a>
+        {% endif %}
+    {% endif %}
+{% endblock unique_content %}

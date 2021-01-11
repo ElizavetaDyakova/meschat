@@ -1,0 +1,8 @@
+{% extends 'advito/layout.html' %}
+{% block unique_content %}
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+            {{ form.as_p }}
+            {{ field.errors }}
+    <button type="submit" class="btn btn-info text-center" > Принять изменения </button>
+    </form>
+{% endblock unique_content %}

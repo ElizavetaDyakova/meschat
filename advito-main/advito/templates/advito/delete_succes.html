@@ -1,0 +1,6 @@
+{% extends 'advito/layout.html' %}
+{% block unique_content %}
+    <h1 class='msg'> Пост удален </h1>
+<h2 class='msg'> <a href='{% url 'index' %}' class='msg'> Вернуться на главную </a> или
+<a href='{% url 'post_create' %}' class='msg'> создать новый пост </a> </h2>
+{% endblock unique_content %}

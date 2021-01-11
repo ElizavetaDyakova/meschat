@@ -1,0 +1,30 @@
+{% extends 'advito/layout.html' %}
+{% block title %}
+    <title>Войти</title>
+{% endblock title %}
+{% block unique_content %}
+{% if form.errors %}
+                {% for field, errors in form.errors.items %}
+                <p> {{ errors }} </p>
+                {% endfor %}
+            {% endif %}
+            {% if not user.is_authenticated %}
+            <h3 class="msg"> Войти </h3>
+            <hr>
+            <form method="post"> {% csrf_token %}
+                {% for field in form %}
+                <div class="form-group">
+                    <p> {{ field }} </p>
+                </div>
+                {% endfor %}
+            <button type="submit" class='btn btn-info'>Войти</button>
+            </form>
+            <hr>
+            <a href='{% url 'password_reset' %}'> Забыли пароль? </a>
+                <p>Еще нет аккаунта?<a href="{% url 'signup' %}">Зарегистрироваться</a></p>
+            {% else %}
+                <h3> Привет, {{ user.username }} </h3>
+                <a href='{% url 'logout' %}'> Выйти? </a>
+                <a href='{% url 'index' %}'> На главную </a>
+            {% endif %}
+{% endblock unique_content %}

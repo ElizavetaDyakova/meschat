@@ -1,0 +1,174 @@
+
+/* подвал*/
+.footer {
+    height: 573px;
+    background: #434343;
+    padding-top: 1px;
+}
+.foo{
+    margin-top: 84px;
+}
+.h-nav-footer {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #AAAAAA;
+}
+
+.line-footer {
+    width: 100%;
+    margin-top: 23px;
+    height: 1px;
+    background-color: #666666;
+    border: none;
+    margin-bottom: 28px;
+    margin-left: 0;
+    margin-right: 0;
+}
+.nav-footer{
+        margin-top: 16px;
+}
+
+.bottom-link,
+.nav-footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-footer a:hover {
+    color: #AAAAAA;
+}
+
+.btnms {
+    border: 0;
+    width: 20%;
+    padding: 9px;
+    background: #000000;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footer-block-wraper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pole {
+    border: 0;
+    background: #666666;
+    color: white;
+    width: 75%;
+    height: 38px;
+    padding-left: 11px;
+}
+
+.nav-footer-wrap {
+    padding: 0;
+}
+
+.footer-block {
+    width: 32%;
+}
+
+.soc-footer {
+    margin-top: 26px;
+    display: flex;
+    padding: 0;
+    margin-bottom: 54px;
+}
+
+.soc-footer li {
+    margin-right: 11px;
+}
+
+.bottom-link:hover {
+    text-decoration: underline;
+    color: #fff;
+    cursor: pointer;
+}
+
+.rat-wrap{
+    padding: 0;
+    display: flex;
+    align-content: space-between;
+    width: 100%;
+}
+
+.star{
+    margin-right: 2px;
+}
+
+.rat{
+    color: #fff;
+    width: 33%;
+    margin-left: 22px;
+    align-self: center;
+    margin-top: -5px;
+}
+
+.web-rat{
+    color: #A2A2A2;
+}
+.line-footer-bottom{
+    width: 100%;
+    margin-top: 13px;
+}
+
+.icon:hover{
+    opacity: 0.5;
+}
+
+.star:hover{
+    text-decoration: none;
+    color: #C29974;
+}
+
+.rating-area {
+    overflow: hidden;
+    width: 145px;
+    height: 33px;
+    margin-top: -36px;
+    margin-left: 118px;
+}
+
+.rating-area:not(:checked) > input {
+    display: none;
+}
+.rating-area:not(:checked) > label {
+    float: right;
+    width: 22px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 50px;
+    color: lightgrey;
+    text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+    content: '★';
+}
+.rating-area > input:checked ~ label {
+    color: #C29974;
+    text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+    color: #C29974;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+    color: #C29974;
+}
+.rate-area > label:active {
+    position: relative;
+}
+
+.rating-area:checked .star{
+    color: #C29974;
+}

@@ -1,0 +1,12 @@
+{% extends 'advito/layout.html' %}
+{% block unique_content %}
+    <p>Пользователи</p>
+{% for user in users %}
+           <li class="post-set-block">
+               <a href="{% url 'profile' user.user_id %}">
+                   <p>{{ user.user }}</p>
+               </a>
+           </li>
+           {% endfor %}
+
+{% endblock unique_content %}

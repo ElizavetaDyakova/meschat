@@ -1,0 +1,72 @@
+{% extends 'advito/layout.html' %}
+{% block title %}
+        <title>{{ profile.user.username }}</title>
+    {% endblock title %}
+{% block unique_content %}
+    <section class="proile-view">
+    {% if profile.ava %}
+    <div class="left">
+        <img class="ava" style="    width: 260px; height: 220px;" src= '{{ profile.ava.url }}'/>
+    </div>
+    {% endif %}
+    <div class="right">
+            <p class='nickname'> {{ profile.user.username }} </p>
+            <p> Дата рождения:
+            {% if profile.birth_date %}
+                <i> {{ profile.birth_date|date:"d F Y" }} </i>
+                {% else %}
+                <i>Не указано</i>
+            {% endif %}
+            </p>
+            <p>Телефон:
+            {% if profile.phone_number %}
+                <a href="tel:{{ profile.phone_number }}">{{ profile.phone_number }}</a>
+            {% endif%}</p>
+            <p> Обо мне:
+            {% if profile.about %}
+                <i> {{ profile.about }} </i>
+            {% endif %}
+            </p>
+            {% if user.id == profile.user.id %}
+                <a href="{% url 'edit-profile' profile.user.id %}" >  Редактировать профиль  </a>
+            {% endif %}
+    </div>
+    </section>
+    <section class="post-content">
+        {% if profile.user.add_set.all  %}
+        <hr class="line-prof">
+        <p style="margin-bottom: 30px;">
+        Посты {{ profile.user.username }}
+        </p>
+            <div class="posts">
+
+        <!-- Элементы с постами -->
+                {% for post in profile.user.add_set.all %}
+                   <div class="post-user">
+                       <a href="{% url 'post_detail' post.id %}">
+                           <div class="right">
+                                <img class="imagi" alt="post image" src="{{ post.image.url }}"
+                                     style="width:200px; height: 200px;">
+                                <p class="data-min">{{ post.date_pub }}</p>
+                                       </div>
+                                <div class="right left">
+                                <p>Автор: <a class="underl" href= '{% url 'profile' post.author.id%}'> {{post.author.username}} </a></p>
+                                <a class="underl" href="{% url 'categ' post.category.id %}">{{ post.category.name }}</a>
+                                <p>{{ post.header }}</p>
+                                <p>Описание: {{ post.description }}</p>
+                            {% csrf_token %}
+                            {% if post.author == user %}
+                                    <a class='red-post' href='{% url 'post_edit' post.id %}'> Редактировать </a>
+                            {% endif %}
+                        </div>
+                       </a>
+                </div>
+                {% endfor %}
+        <!-- Конец элементов с постами -->
+        {% else %}
+                <a> Постов нет. </a>
+        {% endif %}
+            </div>
+    </section>
+
+{% endblock unique_content %}

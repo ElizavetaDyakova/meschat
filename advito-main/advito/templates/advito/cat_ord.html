@@ -1,0 +1,25 @@
+{% extends 'advito/layout.html' %}
+{% block title %}
+    <title>{{ category.name }}</title>
+{% endblock title %}
+{% block unique_content %}
+{% if posts %}
+    <ul class="post-set">
+       {% for post in posts %}
+           <li class="post-set-block">
+               <a href="{% url 'post_detail' post.id %}">
+                   <div>
+                       <img class="imagi" alt="posts image" src="{{ post.image.url }}"
+                            style="height: 250px;">
+                   </div>
+                   <p>{{ post.author }}</p>
+                   <p>{{ post.header }}</p>
+                   <p class="data">{{ post.date_pub }}</p>
+               </a>
+           </li>
+           {% endfor %}
+    </ul>
+    {% else %}
+    <p>К сожалению, пока объявлений по данной категории нету:(</p>
+{% endif %}
+{% endblock unique_content %}

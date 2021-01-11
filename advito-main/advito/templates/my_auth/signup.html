@@ -1,0 +1,22 @@
+{% extends 'advito/layout.html' %}
+{% block title %}
+    <title>Регистрация</title>
+{% endblock title %}
+{% block unique_content %}
+ <h3 class="msg"> Регистрация </h3>
+            <hr>
+            {% if not registered %}
+                <form method='post'>
+                {% csrf_token %}
+                {% for field in form %}
+                    <h3>  {{ field }} </h3>
+                    <ul>  {{ field.errors }} </ul>
+                {% endfor %}
+                <button type='submit' class='btn btn-info'> Зарегистрироваться </button>
+                </form>
+                <p>Уже есть аккаунт?<a href="{% url 'login' %}">Войти</a></p>
+            {% else %}
+                <h3 class='msg'> Вы успешно зарегистрированы </h3>
+                <a href="#"> Войти </a>
+            {% endif %}
+{% endblock unique_content %}

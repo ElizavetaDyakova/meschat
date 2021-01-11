@@ -1,0 +1,33 @@
+.post-set {
+    padding: 30px 53px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.post-set-block {
+    position: relative;
+    border-radius: 7px;
+    padding: 15px;
+    background-color: #ffff;
+    flex: 30%;
+    max-width: 29%;
+    margin-bottom: 15px;
+}
+.post-set-block a:visited {
+    color: #222222;
+}
+.right a, .data-min, .post-set-block a {
+    color: #555;
+}
+.data {
+    position: absolute;
+    font-size: 12px;
+    right: 24px;
+    bottom: 0;
+}
+.imagi {
+    border-radius: 2px;
+    object-fit: cover;
+    width: 100%;
+    object-position: center;
+}

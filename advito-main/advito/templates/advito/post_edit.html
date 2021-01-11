@@ -1,0 +1,15 @@
+{% extends 'advito/layout.html' %}
+{% block unique_content %}
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        <div class="form">
+            {{ form.as_p }}
+        </div>
+    <button type="submit" class="publih ptin" > Принять изменения </button>
+    </form>
+    <form action ='{% url 'post_delete' add.id %}' method="get">
+        {% csrf_token %}
+            <button class="publih delete" type="submit"> Удалить пост </button>
+    </form>
+{% if post.author == user %}
+{% endif %}
+{% endblock unique_content %}

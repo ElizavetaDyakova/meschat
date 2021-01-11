@@ -1,0 +1,229 @@
+@import url(blocks/header.css);
+@import url(blocks/footer.css);
+@import url(blocks/index.css);
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #0d0b0b;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+.container {
+    box-sizing: border-box;
+    padding-left: 110px;
+    padding-right: 110px;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header-nav {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+.post-set-block {
+    position: relative;
+    border-radius: 7px;
+    padding: 15px;
+    background-color: #ffff;
+    flex: 30%;
+    max-width: 29%;
+    margin-bottom: 15px;
+}
+.right a,
+.data-min,
+.post-set-block a{
+    color: #555;
+}
+.underl:visited{
+    opacity: 0.5;
+}
+.underl:hover{
+    text-decoration: underline;
+}
+.link-menu{
+    margin: 10px;
+    margin-top: 25px;
+}
+.header-nav a:visited{
+    color: #E2E2E2;
+}
+.posts {
+    display: flex;
+    flex-flow: wrap;
+}
+header{
+    height: 78px;
+    background: #48429c;
+}
+.active{
+    display: flex;
+    flex-flow: column;
+}
+.post-user {
+    display: flex;
+    position: relative;
+    border-radius: 3px;
+    max-width: 30%;
+        margin: 10px 10px;
+    justify-content: space-between;
+    padding: 22px;
+    background-color: white;
+}
+main {
+    background-color: #F0F0EF;
+    margin: 0;
+    padding: 30px;
+    height: auto;
+}
+.name{
+    font-family: 'Chilanka', cursive;
+    font-size: 35px;
+    margin-top: 10px;
+    color: #E2E2E2;
+}
+.post-set {
+    padding: 30px 53px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.linked{
+    color: #E2E2E2;
+}
+.red-post{
+    text-decoration: underline;
+}
+.data{
+    position: absolute;
+    font-size: 12px;
+    right: 24px;
+    bottom: 0;
+}
+.data-min {
+    font-size: 12px;
+    left: 22px;
+    bottom: 4px;
+    position: absolute;
+}
+.post-detail {
+    display: flex;
+    position: relative;
+    width: 55%;
+    padding: 22px;
+    background-color: white;
+}
+.form label{
+    margin-right: 10px;
+}
+.form p {
+    display: flex;
+    flex-flow: row;
+    width: 550px;
+}
+.show-all {
+    display: block;
+    margin: auto;
+    width: 214px;
+    text-decoration: underline;
+    margin: 30px 40%;
+}
+.post-set-block a:visited{
+    color: #222222;
+}
+.publih {
+    margin: 10px;
+    padding: 12px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    background-color: #48429c;
+    border-radius: 4px;
+}
+.imagi {
+    border-radius: 2px;
+    object-fit: cover;
+    width: 100%;
+    object-position: center;
+}
+.log{
+    background-color: transparent;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    font-size: 19px;
+}
+.linked:hover,
+.log:hover{
+    text-shadow: 0px 0px 8px #FFFFFF;
+    transition: all 0.5s ease;
+}
+.cat-set{
+    display: flex;
+    flex-direction: column;
+}
+.cat:hover{
+    transform: scaleX(1.001);
+    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.25);
+    transition: all 0.5s ease;
+}
+.post-set-block:hover,
+.post-user:hover{
+    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.25);
+    transition: all 0.5s ease;
+}
+
+.cat {
+    padding: 10px;
+    background-color: white;
+    width: 100px;
+    margin: 3px 0;
+    border-radius: 4px;
+}
+.delete{
+    background-color: darkred;
+    opacity: 0.5;
+}
+.ptin{
+    background-color: #48429c;
+}
+/*profile*/
+.ava{
+    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+    object-fit: cover;
+    width: 100%;
+    object-position: center;
+}
+.line-prof{
+    width: 100%;
+    margin-top: 26px;
+    height: 1px;
+    background-color: #c8c8c8;
+    border: none;
+    margin-bottom: 28px;
+    margin-left: 0;
+    margin-right: 0;
+}
+.proile-view{
+    display: flex;
+}
+.left{
+    margin-right: 25px;
+}
+.proile-view a{
+    text-decoration: underline;
+}
+.post-user img{
+    margin-right: 25px;
+    margin-bottom: 20px;
+}

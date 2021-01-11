@@ -1,0 +1,22 @@
+{% extends 'advito/layout.html' %}
+{% block unique_content %}
+    <p>Всем привет! Добро пожаловать на доску объявлений - advito!</p>
+    {% if posts %}
+    <ul class="post-set">
+       {% for post in posts %}
+           <li class="post-set-block">
+               <a href="{% url 'post_detail' post.id %}">
+                   <div>
+                       <img class="imagi" alt="posts image" src="{{ post.image.url }}"
+                            style="height: 250px;">
+                   </div>
+                   <p>{{ post.author }}</p>
+                   <p>{{ post.header }}</p>
+                   <p class="data">{{ post.date_pub }}</p>
+               </a>
+           </li>
+           {% endfor %}
+    </ul>
+        <a class="show-all underl" href="{% url 'all' %}">Показать все объявления</a>
+    {% endif %}
+{% endblock unique_content %}

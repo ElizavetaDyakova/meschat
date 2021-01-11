@@ -1,0 +1,16 @@
+{% extends 'advito/layout.html' %}
+{% block unique_content %}
+    {% if post.author != user %}
+    <h1 class='msg'> Удалить данный пост может только его автор </h2>
+{% else %}
+    <h1 class='msg'> Вы уверены, что хотите удалить этот пост? </h1>
+        <div class='container text-center'>
+            <div class="btn-group text-center" role="group">
+                <form method='post' action='{% url 'post_delete' post.id %}'>
+                    {% csrf_token %} <button type='submit' class='btn btn-danger'> Удалить </button>
+                </form>
+                <a href="{% url 'post_detail' post.id %}" class='btn btn-info'>  Нет </a>
+            </div>
+        </div>
+{% endif %}
+{% endblock unique_content %}
